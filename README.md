@@ -12,3 +12,10 @@
    - Benutzer          = Matrikelnr (mit s0)
    - Passwort          = htw passwort
    - Database          = Name der Datenbank
+
+# Useful Links
+
+https://wikis.gm.fh-koeln.de/Datenbanken/Relationale-Algebra
+https://www.cs.hs-rm.de/~knauf/Datenbanken2018/Vorlesung5.pdf
+
+https://quizlet.com/de/karteikarten/datenbanksystem-412568469
