@@ -43,3 +43,85 @@ WHERE strecken.name = 'Mont Ventoux' AND strecken.name = faehrt.strecke AND faeh
 
 SELECT DISTINCT mitglieder.name FROM faehrt, strecken, mitglieder
 WHERE  faehrt.fahrer = mitglieder.nummer AND  faehrt.durchschnitttrittfrequenz = 72
+
+
+# Verständnisfragen
+
+1. Wieso verwendet man Datenbanken?
+- Große Datenmengen langfristig, effizient und ohne Fehler zu speichern
+2. Was bedeuten die Abkürzungen DB und DBMS? Was versteht man unter den Begriffen und wie stehen sie zueinander in Beziehung?
+- DB = Datenbank, DBMS = Datenbankmanagementsysteme
+- DB ist Ort wo Daten gespeichert werden, DBMS ermöglicht Daten zu bearbeiten, löschen und neue Daten hinzuzufügen
+3. Was bezeichnet man als Datenredundanz und wieso führt sie zu Problemen?
+- Datenredundanz ist das mehrfache speichern von Daten (an verschiedenen Orten)
+- Dies führt dazu dass beim Verändern von Daten möglicherweise nicht alle Daten verändert werden und somit Unstimmigkeiten entstehen
+4. Was sind Entitäten und wie stehen sie im Verhältnis zu Entitätstypen?
+5. Was sind Beziehungen und wie stehen sie im Verhältnis zu Beziehungstypen?
+6. Wie werden die Eigenschaften von Entitäten ausgedrückt? Welcher Fachbegriff wird verwendet? Kennen Sie Beispiele für Eigenschaften?
+7. Was ist ein Schlüssel? Wie unterscheiden sich Primär und Kandidatenschlüssel?
+8. Können Beziehungen Eigenschaften enthalten? Wenn ja, kennen Sie ein Beispiel dafür?
+9. Was sind die Domänen der Attribute Monat, Name, Matrikelnummer und Semesteranzahl?
+10. Was sind Rollen? Wann muss man sie in ER-Diagrammen einsetzen?
+11. Was versteht man unter 1:1-, 1:N- und N:M-Beziehungen?
+12. Was ist das kartesische Produkt?
+13. Was ist eine Relation?
+14. In welchem Verhältnis stehen kartesisches Produkt und Relation?
+15. Wie können Relationen dargestellt werden?
+
+# Infos aus den Vorlesungen
+## Warum werden Datenbankmanagementsysteme genutzt? 
+- Reduktion der Entwicklungskosten
+- Bereitstellung Mehrbenutzerbetrieb
+- Vermeidung von Datenverlust
+- Vermeidung von Integritätsverletzungen
+- Vermeidung von Redundanzen
+- Vermeidung von Integritätsverletzungen
+- Beschränkungen des Datenzugriffs
+
+## Die 9 Codd’schen Regeln
+1. Integration:
+einheitliche, nichtredundante Datenverwaltung
+2. Operation:
+Speichern, Suchen Ändern
+3. Katalog:
+Zugriffe auf Datenbankbeschreibungen im Data Dictionary
+4. Benutzersichten:
+vers. Ansichten für Admin, Nutzer
+5. Integritätssicherung:
+Korrektheit des Datenbankinhalts
+6. Datenschutz
+Ausschluss unauthorisierter Zugriffe
+7. Transaktion:
+mehre DB-Operationen als Funktionseinheit
+8. Synchronisation
+parallele Transaktionen koordinieren
+9. Datensicherung
+Wiederherstellung von Daten nach Systemfehlern
+
+## Entwurf
+
+### 1. Konzeptuelles Modell (ER-Modellierung)
+
+- Ziel: Betrieblicher Vorgang soll durch Informationstechnik unterstützt werden
+- Problem: Chaos realer Welt muss in ein *realitätsnahes* vom Computer *verarbeitbares* Modell umgesetzt werden
+
+1. Abbildung der Situation in Form von Objekten und Beziehungen
+
+### 2. Implementierungsschema
+
+- Von Konzeptuelles Schema zu:
+    - Relationales Schema
+    - Netzwerk Schema
+    - Objektorientiertes Schema
+
+(heißt bspw.: Tabellen werden erstellt)
+
+## Relationale Algebra und Operatorbäume
+
+### Abarbeitung von Anfragen
+1. Algebraische Vereinfachung des Terms (logische Optimierung)
+2. Physische Optimierung
+3. Erstellung von Kostenplänen
+    1. Statistische Auswertungen (Tabellengrößen, …)
+    2. Abwägung der zur Verfügung stehenden Algorithmen
+4. Datenbank Tuning
