@@ -44,6 +44,24 @@ WHERE strecken.name = 'Mont Ventoux' AND strecken.name = faehrt.strecke AND faeh
 SELECT DISTINCT mitglieder.name FROM faehrt, strecken, mitglieder
 WHERE  faehrt.fahrer = mitglieder.nummer AND  faehrt.durchschnitttrittfrequenz = 72
 
+# Relationale Algebra und Operatorbaum
+
+
+![image](https://github.com/MonstyMon/Datenbanken/assets/130398628/7e0625e5-82af-449b-b98f-81f680b7b470)
+
+## "Verneinung", hier: "Welcher Professor hält keine Vorlesung?"
+
+SELECT Name FROM Professoren, (
+    (SELECT PersNr FROM Professoren) 
+    EXCEPT 
+    (SELECT gelesenVon FROM Vorlesungen)
+) AS tmp 
+WHERE Professoren.PersNr = tmp.PersNr
+
+![image](https://github.com/MonstyMon/Datenbanken/assets/130398628/7e24373f-5fdf-4153-8fb2-b700f84cd627)
+
+
+![image](https://github.com/MonstyMon/Datenbanken/assets/130398628/7edadc75-fdef-46d5-920c-075d08e8965b)
 
 # Verständnisfragen
 
@@ -125,3 +143,4 @@ Wiederherstellung von Daten nach Systemfehlern
     1. Statistische Auswertungen (Tabellengrößen, …)
     2. Abwägung der zur Verfügung stehenden Algorithmen
 4. Datenbank Tuning
+
