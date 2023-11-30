@@ -15,7 +15,8 @@
 
 # Useful Links
 
-https://wikis.gm.fh-koeln.de/Datenbanken/Relationale-Algebra
-https://www.cs.hs-rm.de/~knauf/Datenbanken2018/Vorlesung5.pdf
+- https://wikis.gm.fh-koeln.de/Datenbanken/Relationale-Algebra
+- https://www.cs.hs-rm.de/~knauf/Datenbanken2018/Vorlesung5.pdf
+- https://www.w3schools.com/sql/default.asp
 
-https://quizlet.com/de/karteikarten/datenbanksystem-412568469
+- https://quizlet.com/de/karteikarten/datenbanksystem-412568469
