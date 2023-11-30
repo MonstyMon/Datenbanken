@@ -20,3 +20,26 @@
 - https://www.w3schools.com/sql/default.asp
 
 - https://quizlet.com/de/karteikarten/datenbanksystem-412568469
+
+# Beispiel SQL Abfragen (mit seiner Datenbank)
+
+- Wie viele Kilometer ist Dieter Doping insgesamt gefahren?
+
+SELECT SUM(km)FROM mitglieder, faehrt, strecken
+WHERE mitglieder.nummer = 4 AND faehrt.fahrer = mitglieder.nummer AND faehrt.strecke = strecken.name
+- Wie viel Durchschnittswatt hatten Leute die "48 Kehren in toller Landschaft" gefahren sind?
+
+SELECT durchschnittwatt FROM faehrt, strecken
+WHERE  strecken.beschreibung = '48 Kehren in toller Landschaft' AND strecken.name = faehrt.strecke
+- Welcher Fahrer kann Rekorde brechen?
+
+SELECT DISTINCT mitglieder.name FROM mitglieder, faehrt, kategorien, strecken
+WHERE  kategorien.name = 'Flachland' AND kategorien.name = strecken.kat AND strecken.name = faehrt.strecke AND mitglieder.nummer = faehrt.fahrer
+- Wie viel Watt hat CQ in der Hölle  verbraten?
+
+SELECT SUM(durchschnittwatt) FROM faehrt, strecken, mitglieder
+WHERE strecken.name = 'Mont Ventoux' AND strecken.name = faehrt.strecke AND faehrt.fahrer = mitglieder.nummer AND mitglieder.name = 'Carsten Quäler'
+- Welcher Fahrer hatte ein Frequenz von 72?
+
+SELECT DISTINCT mitglieder.name FROM faehrt, strecken, mitglieder
+WHERE  faehrt.fahrer = mitglieder.nummer AND  faehrt.durchschnitttrittfrequenz = 72
